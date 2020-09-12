@@ -1,0 +1,17 @@
+theme: minima
+minima:
+  skin: dark
+  social_links:
+    youtube: soundpaint
+title: Technical Blog
+author:
+  Jürgen Reuter
+email:
+  blog@soundpaint.org
+web:
+  www.juergen-reuter.de
+description: >- #ignore next line
+  A loose collection of small articles that I do not see deserve to be published elsewhere.
+show_excerpts: true
+github_username: soundpaint
+#iconurl: images/logo.png
