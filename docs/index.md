@@ -36,3 +36,10 @@ authors use the opportunity of writing textbooks to utilize bycatch
 insights as inspiration for creating excercises for students for
 further elaboration.  Since I am currently not writing any textbook, I
 use this blog instead as an abode for otherwise homeless knowledge.
+
+I reserve the right to subsequently make changes such as minor
+corrections or additions to existing blog posts.  If you want to track
+the full history of a specific blog post, you may look into its
+revision history in the associated [Git
+repository](https://github.com/soundpaint/blog), that holds the source
+files of this blog.
