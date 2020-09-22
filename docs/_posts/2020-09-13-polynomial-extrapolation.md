@@ -305,11 +305,12 @@ I quickly found out the general formula
 
     𝑦 = 𝑓(𝑥) = 1.8𝑥 + 32
 
-by scaling down the 90 by 50 to 1.8, according to the difference of 50
-in the function arguments, and using 𝑓(0) as constant offset for
-converting from °C to °F, and the reverse
+by retrieving the value 1.8 = 90 / 50 from scaling down the 90 by 50,
+according to the difference of 50 in the function arguments, and using
+𝑓(0) = 32 as constant offset for converting from °C to °F.  The
+reverse function resolves to
 
-    𝑥 = 𝑓(𝑦) = (𝑦 - 32) / 1.8
+    𝑥 = 𝑔(𝑦) = 𝑓⁻¹(𝑦) = (𝑦 - 32) / 1.8
 
 for converting from °F to °C.
 
