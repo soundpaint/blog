@@ -14,9 +14,10 @@ future papers or talks one way or another.
 Just think of [Fermat's Last
 Theorem](https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem).  He
 had in mind a proof for the assumption that no three positive integers
-𝑎, 𝑏, and 𝑐 satisfy the equation 𝑎ⁿ + 𝑏ⁿ = 𝑐ⁿ for any integer value of
-𝑛 greater than 2, but did not have enough space to scribble it down in
-the margin of a copy of the Ancient Greek text
+\\(a\\), \\(b\\), and \\(c\\) satisfy the equation \\(a^n + b^n =
+c^n\\) for any integer value of \\(n\\) greater than 2, but did not
+have enough space to scribble it down in the margin of a copy of the
+Ancient Greek text
 [Arithmetica](https://en.wikipedia.org/wiki/Arithmetica).  Still, he
 obviously considered his proof not being sufficiently important to be
 published elsewhere, such that, very sadly, we do not know anything
