@@ -208,11 +208,11 @@ function.
 
 Combined with a little bit knowledge of differential calculus, we can
 even compute the coefficients of the cubic function.  Note that,
-resembling the derivation function \\(\frac{\delta{}x^n}{\delta{}x} =
-nx^{n-1}\\) in real-valued analysis, the last, constant column
-contains the \\((n-1) \cdot \ldots \cdot 2 \cdot 1\\) value of the
-actual coefficient.  For example, think of the function \\(f(x) =
-x^3\\):
+resembling the derivation function
+\\(\frac{\mathrm{d}x^n}{\mathrm{d}x} = nx^{n-1}\\) in real-valued
+analysis, the last, constant column contains the \\((n-1) \cdot \ldots
+\cdot 2 \cdot 1\\) value of the actual coefficient.  For example,
+think of the function \\(f(x) = x^3\\):
 
 \\(
 \begin{matrix}
@@ -231,9 +231,9 @@ x^3\\):
 Retrieving the value 6 in the constant column is similar to derivating
 \\(x^3\\) three times until getting to a constant:
 
-\\(\frac{\delta{}x^3}{(\delta{}x)^3} =
-\frac{\delta{}3x^2}{(\delta{}x)^2} = \frac{\delta{}6x}{\delta{}x} =
-6\\)
+\\(\frac{\mathrm{d}^3x^3}{\mathrm{d}x^3} =
+\frac{\mathrm{d}^23x^2}{\mathrm{d}x^2} =
+\frac{\mathrm{d}6x}{\mathrm{d}x} = 6\\)
 
 (In general, for a polynomial function of degree \\(n\in{}ℕ\\), you
 will get a value of \\(n!\\).)
@@ -304,7 +304,7 @@ Since we get constant values already in the first column that we add,
 our polynomial function \\(g(x)\\) is obviously a linear function,
 that is, it has no quadratic term, but only a linear term (and, of
 course, possibly a constant offset \\(d\\)).  For this linear term,
-again similar to \\(\frac{\delta{}x^1}{\delta{}x} = 1\\) in the
+again similar to \\(\frac{\mathrm{d}x^1}{\mathrm{d}x} = 1\\) in the
 infinitesimal calculus, we would expect \\(1\\) as coefficent \\(c\\)
 in the term \\(cx\\), but get \\(7\\).  Hence, the linear term in our
 polynomial is \\(7𝑥\\).  That is, we have \\(g(x) = 7x + d\\) with
