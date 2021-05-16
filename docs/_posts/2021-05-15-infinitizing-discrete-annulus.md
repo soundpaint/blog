@@ -242,13 +242,21 @@ public class AnnulusRatioLinear
   public static void main(final String argv[])
   {
     for (int i = 2; i < 50; i++) {
-      final double r = i;
+      final long r = i;
       final double a1 = 2 * Math.PI * r * lp;
       final double a2 = 8 * ((long)(halfSquareRoot * r / lp)) * lp * lp;
-      System.out.println("ratio=" + (a2 / a1));
+      System.out.printf("%d %f%n", r, (a2 / a1));
     }
   }
 }</textarea>
+
+<div style="text-align:center">
+  <figure class="image">
+    <img src="{{site.baseurl}}/assets/images/ratio-linear.svg"
+         alt="Fig. 4: Ratio Convergence for Small-Scale Linear Radiuses">
+    <figcaption>Fig. 4: Ratio Convergence for<br />Small-Scale Linear Radiuses</figcaption>
+  </figure>
+</div>
 
 It even seems unclear if the ratio converges against some limit for
 large values of \\(n\\).  Therefore, we change the loop to produce
@@ -273,17 +281,25 @@ public class AnnulusRatioLogarithmic
   public static void main(final String argv[])
   {
     for (int i = 1; i < 60; i++) {
-      final double r = 1l << i;
+      final long r = 1l << i;
       final double a1 = 2 * Math.PI * r * lp;
       final double a2 = 8 * ((long)(halfSquareRoot * r / lp)) * lp * lp;
-      System.out.println("ratio=" + (a2 / a1));
+      System.out.printf("%d %f%n", r, (a2 / a1));
     }
   }
 }</textarea>
 
-As we now can see, the computation indeed seems to converge to some
-value of approximately \\(0.9003163161571062\\).  Can we provide an
-analytic expression for this numeric value?
+<div style="text-align:center">
+  <figure class="image">
+    <img src="{{site.baseurl}}/assets/images/ratio-logarithmic.svg"
+         alt="Fig. 5: Ratio Convergence for Large-Scale Logarithmic Radiuses">
+    <figcaption>Fig. 5: Ratio Convergence for<br />Large-Scale Logarithmic Radiuses</figcaption>
+  </figure>
+</div>
+
+As we can see now on large scale, the computation indeed seems to
+converge to some value of approximately \\(0.9003163161571062\\).  Can
+we provide an analytic expression for this numeric value?
 
 Yes we can!  Without loss of generality, we again choose \\(w=1.0\\)
 and \\(r=nw, n\in{}ℕ\\).  Then the ratio \\(A_d(r, w) / A_c(r, w)\\)
