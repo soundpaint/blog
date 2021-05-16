@@ -5,4 +5,4 @@ serve:
 	bundle exec jekyll serve
 
 clean:
-	rm -rf _site
+	bundle exec jekyll clean

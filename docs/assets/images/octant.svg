@@ -1,0 +1,173 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Creator: fig2dev Version 3.2.6a -->
+<!-- CreationDate: 2021-05-16 03:52:35 -->
+<!-- Magnification: 1.05 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="166pt" height="164pt"
+	viewBox="843 -147 2634 2599">
+<g fill="none">
+<!-- Line -->
+<rect x="1980" y="-90" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="2340" y="-90" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1620" y="-90" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1260" y="270" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="900" y="630" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="900" y="990" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="900" y="1350" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1260" y="1710" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1620" y="2070" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1980" y="2070" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="3060" y="1350" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="3060" y="990" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="3060" y="630" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="2700" y="270" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="2340" y="2070" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="2700" y="1710" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Circle -->
+<circle cx="2160" cy="1170" r="1260"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Text -->
+<text xml:space="preserve" x="1800" y="1575" fill="#000000" font-family="Times,Symbol" font-style="normal" font-weight="normal" font-size="96" text-anchor="start">&#960;&#47;&#52;</text>
+<!-- Text -->
+<text xml:space="preserve" x="2250" y="2025" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="96" text-anchor="start">n * sin(     )</text>
+<!-- Arc -->
+<path d="M 2160,1755 A 159 159 0 0 1 2340 1935"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Arc -->
+<path d="M 2160,1395 A 91 91 0 0 0 2295 1305"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Arc -->
+<path d="M 2655,1935 A 113 113 0 0 1 2745 1755"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Circle -->
+<circle cx="2160" cy="1170" r="1080"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="40 40"/>
+<!-- Circle -->
+<circle cx="2228" cy="1868" r="9" fill="#000000"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp0">
+	<path clip-rule="evenodd" d="M 843,-147 H 3477 V 2452 H 843 z
+		M 2048,1276 2093,1276 2077,1163 2063,1163z
+		M 2093,1829 2048,1829 2063,1942 2077,1942z"/>
+</clipPath>
+</defs>
+<polyline points=" 2070,1935 2070,1170" clip-path="url(#cp0)"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Forward arrow to point 2070,1170 -->
+<polygon points=" 2093,1276 2070,1186 2048,1276 2093,1276"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 2070,1935 -->
+<polygon points=" 2048,1829 2070,1919 2093,1829 2048,1829"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp1">
+	<path clip-rule="evenodd" d="M 843,-147 H 3477 V 2452 H 843 z
+		M 2819,2003 2819,2048 2932,2032 2932,2018z
+		M 2266,2048 2266,2003 2153,2018 2153,2032z"/>
+</clipPath>
+</defs>
+<polyline points=" 2160,2025 2925,2025" clip-path="url(#cp1)"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Forward arrow to point 2925,2025 -->
+<polygon points=" 2819,2048 2909,2025 2819,2003 2819,2048"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 2160,2025 -->
+<polygon points=" 2266,2003 2176,2025 2266,2048 2266,2003"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Text -->
+<text xml:space="preserve" x="2475" y="1800" fill="#000000" font-family="Times,Symbol" font-style="normal" font-weight="normal" font-size="96" text-anchor="start">&#960;&#47;&#52;</text>
+<!-- Text -->
+<text xml:space="preserve" x="2205" y="1485" fill="#000000" font-family="Times,Symbol" font-style="normal" font-weight="normal" font-size="96" text-anchor="start">&#960;&#47;&#52;</text>
+<!-- Text -->
+<text xml:space="preserve" x="1665" y="1440" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="96" text-anchor="start">n *</text>
+<!-- Text -->
+<text xml:space="preserve" x="1620" y="1575" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="96" text-anchor="start"> sin(     )</text>
+<!-- Text -->
+<text xml:space="preserve" x="2520" y="2025" fill="#000000" font-family="Times,Symbol" font-style="normal" font-weight="normal" font-size="96" text-anchor="start">&#960;&#47;&#52;</text>
+<!-- Circle -->
+<circle cx="2160" cy="1170" r="900"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp2">
+	<path clip-rule="evenodd" d="M 843,-147 H 3477 V 2452 H 843 z
+		M 2183,2324 2138,2324 2153,2437 2167,2437z
+		M 2138,2176 2183,2176 2167,2063 2153,2063z"/>
+</clipPath>
+</defs>
+<polyline points=" 2160,2070 2160,2430" clip-path="url(#cp2)"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Forward arrow to point 2160,2430 -->
+<polygon points=" 2138,2324 2160,2414 2183,2324 2138,2324"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 2160,2070 -->
+<polygon points=" 2183,2176 2160,2086 2138,2176 2183,2176"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp3">
+	<path clip-rule="evenodd" d="M 843,-147 H 3477 V 2452 H 843 z
+		M 3134,1148 3134,1193 3247,1177 3247,1163z
+		M 2266,1193 2266,1148 2153,1163 2153,1177z"/>
+</clipPath>
+</defs>
+<polyline points=" 2160,1170 3240,1170" clip-path="url(#cp3)"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Forward arrow to point 3240,1170 -->
+<polygon points=" 3134,1193 3224,1170 3134,1148 3134,1193"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 2160,1170 -->
+<polygon points=" 2266,1148 2176,1170 2266,1193 2266,1148"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Line -->
+<polygon points=" 2160,1170 2925,1935 2160,1935"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Text -->
+<text xml:space="preserve" x="2205" y="2205" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">w</text>
+<!-- Text -->
+<text xml:space="preserve" x="2655" y="1125" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="2565" y="1530" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="96" text-anchor="start">n</text>
+<!-- Line -->
+<rect x="855" y="810" width="765" height="1620" fill="#ffffff"
+	stroke="#ffffff" stroke-width="8px"/>
+<!-- Line -->
+<rect x="855" y="-135" width="2610" height="1125" fill="#ffffff"
+	stroke="#ffffff" stroke-width="8px"/>
+</g>
+</svg>
