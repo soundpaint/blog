@@ -41,10 +41,17 @@ you may encounter when using contiguous mathematics (or, more
 specifially, the calculus) in the domain of discrete structures such
 as in quantum physics.
 
-## Preliminaries
+## Notational Preliminaries
 
-For the remainder of this article, we use the notation \\(A_\circ(r) =
-\pi{}r^2\\) to denote the area of a circle with radius \\(r\\).
+For the remainder of this article, \\(ℕ\\) denotes the set of natural
+numbers, that is, positive integer numbers.
+
+We use the letter \\(A\\) to denote the area of some shape.  For
+example, we use the notation \\(A_\circ(r) = \pi{}r^2\\) to denote the
+area of a circle with radius \\(r\\).  The _floor_ function
+\\(\lfloor{}x\rfloor\\) is used to convert real numbers into integer
+numbers: it denotes the largest integer number that is not above the
+argument \\(x\\).
 
 Next, let us take a look at the real-valued annulus and then at the
 discrete annulus.
@@ -60,7 +67,7 @@ in the same plane and sharing the same center point.
   <figure class="image">
     <img src="{{site.baseurl}}/assets/images/annulus.svg"
          alt="Fig. 1: Annulus Radius and Width">
-    <figcaption>Fig. 1: Annulus Radius and Width</figcaption>
+    <figcaption>Fig. 1: Annulus with<br />Width w and Radius r=3w</figcaption>
   </figure>
 </div>
 
@@ -90,7 +97,7 @@ between the larger and the smaller circle as follows:
 \\)
 
 In our graphically depicted example, we chose \\(r=3w\\), such that
-for this example,
+for this specific example,
 
 \\(A_c(3w, w) = 2\pi{}3w^2 = 6\pi{}w^2\\).
 
@@ -100,30 +107,45 @@ for this example,
   <figure class="image">
     <img src="{{site.baseurl}}/assets/images/discrete-annulus.svg"
          alt="Fig. 2: Discrete Annulus Radius and Width">
-    <figcaption>Fig. 2: Rasterized Annulus<br />Radius and Width</figcaption>
+    <figcaption>Fig. 2: Rasterized Annulus with<br />Width w and Radius r=3w</figcaption>
   </figure>
 </div>
 
 Now imagine we want to draw the same annulus on a rasterized
-background.  That is, we construct an approximation of the before
-contiguous annulus by putting square tiles on a bitmap.  We assume
-that the square tiles have exactly the same width (and also height,
-since they are squares) as the width that we used for the contiguous
+background, just like drawing a circle on a bitmap image.  That is, we
+construct an approximation of the previously contiguous annulus by
+putting square tiles on the raster.  We assume that the square tiles
+have exactly the same width (and also height, since we assume that
+they are squares) as the stroke width that we used for the contiguous
 annulus.  Given again \\(r\\) and \\(w\\), we define \\(A_d(r, w)\\)
 to denote the area of the discrete annulus with radius \\(r\\) and
 width \\(w\\) that best approximates its contiguous counterpart.  The
-best approximation that we can find for this examples consists of
-exactly 16 tiles.
+best approximation that we can find for our depicted specific example
+consists of exactly \\(16\\) tiles, as you can see if you count the
+tiles in the figure.
 
 Let us now compute the area for this discrete annulus.  Since we
 assumed that each tile has width and height \\(w\\), the area of a
 single tile is \\(w^2\\).  Since the best approximation that we could
-find has exactly 16 tiles, the overall area is \\(16w^2\\) in our
-example.
+find for our specific example has exactly \\(16\\) tiles, the overall
+area is
+
+\\(A_d(3w, w) = 16w^2\\)
+
+in our specific example.
+
+## Specific Ratio \\(C_3 = A_d(3w, w) / A_c(3w, w)\\)
+
+Naively, we would expect, that the contigous annulus and the discrete
+annulus will have approximately the same area, at least on the large
+scale for large radiuses.  So, let us compute the ratio between the
+two areas, expecting a values close to \\(1.0\\), that converges to
+exactly \\(1.0\\) for large radiuses.
 
 Comparing the discrete annulus' area to that of the contiguous for the
-same width and radius (again with \\(r=3w\\) in the depicted example),
-we get a ratio or correction factor \\(C_3\\) of
+same width and radius for our two specific depipted examples
+(remember, both with \\(r=3w\\)), we get a ratio or correction factor
+\\(C_3\\) of
 
 \\(
 \begin{array}{rcl}
@@ -135,18 +157,23 @@ C_3 & = & A_d(3w, w) / A_c(3w, w)\newline
 \end{array}
 \\)
 
-That is, the area of our approximated rastered annulus is roughly
-\\(15%\\) smaller compared to the area of the contiguous annulus.
+That is, the area of our approximated rastered annulus is more than
+\\(15\%\\) smaller compared to the area of the contiguous annulus, at
+least for our specific example with \\(r=3w\\).
 
-For \\(r=3w\\) we get \\(C_3\approx0.8488\\).  What about larger
-values of \\(r\\)?  Can we generalize this result for \\(r=nw\\) for
-any positive integer value of \\(n\\)?  Does the correction factor
-\\(C_n\\) converge to a stable limit for \\(n\to\infty\\)?
+## Counting Tiles with Bresenham
 
-Yes we can!  All we have to know is how many tiles we need to
-rasterize a circle with \\(r=nw\\) for any \\(n\in{}ℕ\\).  For
-counting tiles, we first have to specify how a circle is rasterized at
-all.  We choose to apply [Bresenham's
+For \\(r=3w\\) we get ratio \\(C_3\approx0.8488\\).  What about larger
+values of \\(r\\)?  Can we generalize ratio \\(C_n\\) for \\(r=nw\\)
+for any positive integer value of \\(n\\)?  Does the ratio converge to
+the value \\(1.0\\), as we would naively expect?  If not, does the
+value of \\(C_n\\) at least converge to a stable correction factor for
+\\(n\to\infty\\)?
+
+Yes, we can generalize our result!  All we have to know is how many
+tiles we need to rasterize a circle with \\(r=nw\\) for any
+\\(n\in{}ℕ\\).  For counting tiles, we first have to specify how a
+circle is rasterized at all.  We choose to apply [Bresenham's
 algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
 adapted for circles.
 
@@ -158,34 +185,43 @@ adapted for circles.
   </figure>
 </div>
 
-We devide the circle into \\(8\\) octants of equal length (as close as
-rasterization permits) and have a look at the octant that starts at
-the bottom point of the circle, following its contour counterclockwise
-to the right until we have covered \\(1/8\\) of the circle.  Note that
-everywhere in this octant, the
+We devide the circle into \\(8\\) octants of equal (as close as
+rasterization permits) length and have a look at the octant that
+starts at the bottom point of the circle, following its contour
+counterclockwise to the right until we have covered \\(1/8\\) of the
+circle.  Note that everywhere in this octant, the
 [slope](https://en.wikipedia.org/wiki/Slope) is not larger than
 \\(1.0\\).  That is, when we move along the octant from left to right,
-raster column by raster column, it is sufficient (but also necessary)
-to plot a single tile for each raster column that we cross in order to
-draw a contour without gaps, but also without drawing the same tile
-multiple times.  So, the number of tiles in the octant that we draw
-equals the horizontal extent of the octant, that is the number of
-raster columns that the octant covers.  For a circle's radius of
+raster column by raster column, height may change at most by one
+raster row.  That is, there are not gaps in the raster with respect to
+height, and it is sufficient (but also necessary) to plot a single
+tile for each raster column that we cross from left to right in this
+octant in order to draw a contour without gaps, but also without
+drawing the same tile multiple times.  So, the number of tiles in the
+octant that we draw equals the horizontal extent of the octant, that
+is the number of raster columns that the octant covers.  The width of
+an octant of a circle with radius \\(r\\) is
+\\(\frac{1}{2}\sqrt{2}r\\).  Accordingly, for a circle's radius of
 \\(n\\) raster columns, the octant horizontally covers
 
-\\(\lfloor\sin(\pi/4)\rfloor{}n = \lfloor\cos(\pi/4)\rfloor{}n =
-\lfloor\frac{1}{2}\sqrt{2}\rfloor{}n\\)
+\\(\lfloor{}n\sin(\pi/4)\rfloor = \lfloor{}n\cos(\pi/4)\rfloor =
+\lfloor{}n\frac{1}{2}\sqrt{2}\rfloor\\)
 
 raster columns.  Actually, when rounding to the floor value, we risk a
-gap between the octants, while, when rounding to the ceiling value, we
-risk to draw a tile twice on the octant's edge.  However, when looking
-at the asymptotic behavior for \\(n\to\infty\\), it does not make any
-difference, if we use the floor or ceiling function for rounding.
-Since we have to draw all of the \\(8\\) octants to get a full circle,
-we have to overall draw \\(8\lfloor\frac{1}{2}\sqrt{2}\rfloor{}n\\)
+single tile gap between two adjacent octants, while, when rounding to
+the ceiling value, we risk to draw the same tile twice, once for each
+of the two adjacent octants.  Therefore, in sum for all of the \\(8\\)
+octants, our calculation of tiles for the rasterized circle may be off
+by at most 8 tiles.  However, when looking at the asymptotic behavior
+for \\(n\to\infty\\), it does not make any difference, if we use the
+floor or ceiling function for rounding.
+
+So, we have calculated the number of tiles for a single octant.  Since
+we have to consider all of the \\(8\\) octants to get a full circle,
+we have to overall draw \\(8\lfloor{}n\frac{1}{2}\sqrt{2}\rfloor\\)
 tiles for a circle with radius \\(r=nw\\).
 
-## Ratio \\(A_d / A_c\\)
+## General Ratio \\(C_n = A_d(nw, w) / A_c(nw, w)\\)
 
 Now we can implement a program that computes the ratio values for any
 \\(n\\).  Starting with \\(n=2\\) and iterating until \\(n=49\\), we
@@ -249,27 +285,60 @@ As we now can see, the computation indeed seems to converge to some
 value of approximately \\(0.9003163161571062\\).  Can we provide an
 analytic expression for this numeric value?
 
-Yes we can!  The ratio \\(A_d(w, r) / A_c(w, r)\\) for \\(r=nw, w=1.0,
-n\in{}ℕ\\) evaluates as:
+Yes we can!  Without loss of generality, we again choose \\(w=1.0\\)
+and \\(r=nw, n\in{}ℕ\\).  Then the ratio \\(A_d(r, w) / A_c(r, w)\\)
+evaluates as:
 
 \\(
 \begin{array}{rcl}
-C_\infty{} & = & \lim_{n\to\infty}A_d(w, r) / A_c(w, r)\newline
-& = & \frac{8\lfloor\frac{1}{2}\sqrt{2}\rfloor{}n}{2\pi{}n}\newline
-& = & \frac{4\sqrt{2}n}{2\pi{}n}\newline
+C_\infty{} & = & \lim_{n\to\infty}A_d(r, w) / A_c(r, w)\newline
+& = & \lim_{n\to\infty}A_d(nw, w) / A_c(nw, w)\newline
+& = & \lim_{n\to\infty}A_d(n, 1) / A_c(n, 1)\newline
+& = & \lim_{n\to\infty}\frac{8\lfloor{}n\frac{1}{2}\sqrt{2}\rfloor}{2\pi{}n}\newline
+& = & \lim_{n\to\infty}\frac{8n\frac{1}{2}\sqrt{2}}{2\pi{}n}\newline
+& = & \lim_{n\to\infty}\frac{2\sqrt{2}}{\pi}\newline
 & = & \frac{2\sqrt{2}}{\pi}\newline
 & \approx & 0.900316316,
 \end{array}
 \\)
 
-just about the value that our algorithm returned for extremely high
-values of \\(n\\).
+Note that we can drop the floor function
+\\(\lfloor{}\centerdot{}\rfloor\\) for the real-value to integer
+conversion when considering \\(n\to\infty\\), since the
+off-by-less-than-one becomes neglectable for large values of \\(n\\).
+The result that we get is just about the value that our algorithm
+returned for extremely high values of \\(n\\).  In other words, our
+initial problem of determining
+
+\\(C_\infty = \lim_{n\to\infty}A_d(r=nw, w) / A_c(r=nw, w)\\)
+
+resolves to the expression
+
+\\(C_\infty = \frac{2\sqrt{2}}{\pi}\\).
+
+## Conclusion
+
+We don't solve the problem of dark matter, nor do we directly
+contribute to solve the mysteries of the fine structure constant or
+muon anomaly.
+
+However, this article shows on a very specific example that, when
+using real-valued maths in the context of quantized (rasterized)
+structures, we may need to apply a correction factor to compute valid
+results -- even and in particular on the large scale, where you
+naively would expect that you can neglect quantization.  Generally,
+you can't neglect quantization even on the large scale, as the example
+in this article shows!
 
 ## Making Of
 
 This is somewhat ridiculous: What I am writing in this post (including
-authoring the Java code and finding the proof) took me, maybe, half an
-hour of time or alike.  In contrast, expanding my notes to this
-full-blown blog post, including drawing all figures, took me roughly a
-full day of work.  Maybe I need a secretary write post for my ideas?
-🤷
+authoring the Java code and compile all equations and derivations)
+took me, maybe, half an hour of work time or alike.  In contrast,
+expanding my sparse notes to this full-blown blog post, including
+drawing all figures, took me more than a full day of work, and I still
+see text passages that would deserve more explanation and that show up
+major flaws with respect to consistency in notation especially for
+unexperienced readers.  Maybe I need a secretary with sufficient
+mathematical background for blowing up my sparse notes to full-blown
+blog posts and for proof-reading?  🤷
