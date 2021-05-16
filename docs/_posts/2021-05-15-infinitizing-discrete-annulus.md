@@ -65,7 +65,7 @@ in the same plane and sharing the same center point.
 
 <div style="text-align:center; float:right">
   <figure class="image">
-    <img src="{{site.baseurl}}/assets/images/annulus.svg"
+    <img src="{{site.baseurl}}/assets/images/contiguous-annulus.svg"
          alt="Fig. 1: Annulus Radius and Width">
     <figcaption>Fig. 1: Annulus with<br />Width w and Radius r=3w</figcaption>
   </figure>
@@ -332,6 +332,97 @@ resolves to the expression
 
 \\(C_\infty = \frac{2\sqrt{2}}{\pi}\\).
 
+## Variation of \\(w\\)
+
+<div style="text-align:center; float:right">
+  <figure class="image">
+    <img src="{{site.baseurl}}/assets/images/var-discrete-annulus.svg"
+         alt="Fig. 6: Discrete Annulus Radius and Width">
+    <figcaption>Fig. 6: Alternately Rasterized Annulus<br />with Width w and Radius r=2w</figcaption>
+  </figure>
+</div>
+
+So far, we assumed that our tiles have width and height \\(w\\), which
+is also the stroke width of the annulus.  This assumption was
+reasonable in that tiles with width and height \\(w\\) are the best
+possible match at the topmost, bottommost, leftmost and rightmost
+place of the annulus.
+
+Alternative, one may seek for a bestmost match on the diagonal
+positions on the circle.  This approach leads to tiles with diagonal
+diameter of \\(w\\).  How does this change affect or modify our
+previous results?
+
+* For simplicity, we keep the tiling of our example with \\(16\\)
+  tiles exactly the same, with still \\(16\\) tiles.
+* Our new \\(w\\) is now the diagonal diameter of the tiles.
+  Consequently, the new width and height of our tiles is now
+  \\(\frac{1}{2}\sqrt2w\\), and the new area of our tiles is the
+  square of the width or height, that is \\(\frac{1}{2}w^2\\).
+* The total area of our varied discrete annulus with still \\(16\\)
+  tiles is now \\(A_d(r, w) = 16\frac{1}{2}w^2 = 8w^2\\).
+  Effectively, in terms of \\(w\\), the area of each tile, and thus
+  the area of our complete discrete annulus has been halved.
+* If it does not make any sense for you that the area has been halved,
+  since on figure, the area looks still the same, then rather think of
+  changing the unit, just as if you had been measuring your garden so
+  far in square meters, and now you switch to square inches.  The area
+  as drawn on paper is still the same, but its value changes due to
+  changing the unit (the \\(w\\) is the unit that we changed).
+* For our contiguous annulus, the area is still \\(2\pi{}rw\\), since
+  this is true for any contiguous annulus with radius \\(r\\) and
+  stroke width \\(w\\).  However, note that the radius (in terms of
+  \\(w\\)) has been changed by our modification: The inner circle has
+  been slightly moved towards the center, such that the tiles'
+  diagonal diameter completely fits into the annulus.  Initially, our
+  example was constructed with \\(r=3w\\).  With our change, we now
+  have \\(r=2w\\), as the light blue tiles indicate (even if there
+  placement is off by exactly half a column and row of the raster).
+  That is, the area of the contiguous annulus in our alternate
+  scenario now is \\(A_c(r, w) = 2\pi{}rw = 2\pi{}2w^2 = 4\pi{}w^2\\).
+
+In summary, we get:
+
+\\(
+\begin{array}{rcl}
+C_2 & = & A_d(r, w) / A_c(r, w)\newline
+& = & A_d(2w, w) / A_c(2w, w)\newline
+& = & 8w^2 / (4\pi{}w^2)\newline
+& = & \frac{8}{4\pi}\newline
+& = & \frac{2}{\pi}\newline
+& \approx & 0.6366.
+\end{array}
+\\)
+
+This result seems to be even lower than our previous \\(C_3\\), but is
+not directly comparable, as we have seen that convergence for low
+radiuses looks rather chaotic, and we now have the case \\(r=2w\\)
+instead of the original \\(r=3w\\).  Hence, we need again to look at
+Bresenham.
+
+So, once again, without loss of generality, we choose \\(w=1.0\\) and
+\\(r=nw, n\in{}ℕ\\).  Since \\(w\\) now designates the diameter of our
+tiles, its width and height is each \\(\frac{1}{2}\sqrt2w\\), and its
+area \\(\frac{1}{2}w^2\\).  Then the ratio \\(A_d(r, w) / A_c(r, w)\\)
+evaluates similar to above, but with the tiles having half the size,
+as:
+
+\\(
+\begin{array}{rcl}
+C_\infty{} & = & \lim_{n\to\infty}A_d(r, w) / A_c(r, w)\newline
+& = & \lim_{n\to\infty}A_d(nw, w) / A_c(nw, w)\newline
+& = & \lim_{n\to\infty}A_d(n, 1) / A_c(n, 1)\newline
+& = & \lim_{n\to\infty}\frac{\frac{1}{2}8\lfloor{}n\frac{1}{2}\sqrt{2}\rfloor}{2\pi{}n}\newline
+& = & \lim_{n\to\infty}\frac{4n\frac{1}{2}\sqrt{2}}{2\pi{}n}\newline
+& = & \lim_{n\to\infty}\frac{\sqrt{2}}{\pi}\newline
+& = & \frac{\sqrt{2}}{\pi}\newline
+& \approx & 0.450158158,
+\end{array}
+\\)
+
+which is, now that the tiles have half of their original size, not
+surprisingly also half of the above value.
+
 ## Conclusion
 
 We don't solve the problem of dark matter, nor do we directly
@@ -348,13 +439,29 @@ in this article shows!
 
 ## Making Of
 
-This is somewhat ridiculous: What I am writing in this post (including
-authoring the Java code and compile all equations and derivations)
-took me, maybe, half an hour of work time or alike.  In contrast,
-expanding my sparse notes to this full-blown blog post, including
-drawing all figures, took me more than a full day of work, and I still
-see text passages that would deserve more explanation and that show up
-major flaws with respect to consistency in notation especially for
-unexperienced readers.  Maybe I need a secretary with sufficient
-mathematical background for blowing up my sparse notes to full-blown
-blog posts and for proof-reading?  🤷
+This is somewhat ridiculous: Drawing a sketch of what I am writing in
+this post (including authoring the Java code and compile all equations
+and derivations) took me, maybe, half an hour of work time or alike.
+In contrast, expanding my sparse notes to this full-blown blog post,
+including drawing all figures, took me more than a full day of work,
+and I still see text passages that would deserve more elaboration and
+explanation and that show up major flaws with respect to consistency
+in notation especially for unexperienced readers.  Maybe I need a
+secretary with sufficient mathematical background for blowing up my
+sparse notes to full-blown blog posts and for proof-reading?  🤷
+
+Note that this article contains maths that you _should_ be familiar
+with if you have visited an ordinary middle school, or in Germany
+something like _gymnasiale Mittelstufe_ (actually, we do not even
+require any knowledge on infinitesimal calculus throughout this whole
+article).  All of the maths in this article were also well known at
+least to the ancient Greeks, if not already to the ancient Egypts.
+There is not at all any new or rocket science in this article.  Still,
+all of these trivial facts presented in this article seem to be
+unknown to many (hobby) physicists that put their heart and soul into
+discussion on topics like dark matter or alike.  Actually, such
+discussions where motivation and inspiration for me to write this
+article, such that, in the future, I just can post a link to this
+article, rather than to have to explain over and over again the most
+trivial stuff to people that want to discuss physics but do not seem
+to be aware of the most basic facts.  🙂

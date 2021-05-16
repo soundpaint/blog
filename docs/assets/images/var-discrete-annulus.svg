@@ -1,0 +1,146 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Creator: fig2dev Version 3.2.6a -->
+<!-- CreationDate: 2021-05-16 20:10:44 -->
+<!-- Magnification: 1.05 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="162pt" height="162pt"
+	viewBox="878 -112 2564 2564">
+<g fill="none">
+<!-- Line -->
+<rect x="1980" y="-90" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="2340" y="-90" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1620" y="-90" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="900" y="630" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="900" y="990" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="900" y="1350" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1260" y="1710" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1620" y="2070" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1980" y="2070" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="2340" y="2070" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="2700" y="1710" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="3060" y="1350" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="3060" y="990" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="3060" y="630" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="2700" y="270" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1260" y="270" width="360" height="360" fill="#ffbfbf"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1440" y="450" width="360" height="360" fill="#87cfff"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="1800" y="810" width="360" height="360" fill="#87cfff"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Circle -->
+<circle cx="2160" cy="1170" r="1260"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Circle -->
+<circle cx="2160" cy="1170" r="1013"
+	stroke="#000000" stroke-width="8px" stroke-dasharray="40 40"/>
+<!-- Circle -->
+<circle cx="2160" cy="1170" r="765"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp0">
+	<path clip-rule="evenodd" d="M 878,-112 H 3442 V 2452 H 878 z
+		M 3001,1979 2969,2011 3060,2080 3070,2070z
+		M 2759,1801 2791,1769 2700,1700 2690,1710z"/>
+</clipPath>
+</defs>
+<polyline points=" 2700,1710 3060,2070" clip-path="url(#cp0)"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Forward arrow to point 3060,2070 -->
+<polygon points=" 2969,2011 3049,2059 3001,1979 2969,2011"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 2700,1710 -->
+<polygon points=" 2791,1769 2711,1721 2759,1801 2791,1769"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp1">
+	<path clip-rule="evenodd" d="M 878,-112 H 3442 V 2452 H 878 z
+		M 3067,1148 3067,1193 3180,1177 3180,1163z
+		M 2266,1193 2266,1148 2153,1163 2153,1177z"/>
+</clipPath>
+</defs>
+<polyline points=" 2160,1170 3173,1170" clip-path="url(#cp1)"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Forward arrow to point 3173,1170 -->
+<polygon points=" 3067,1193 3157,1170 3067,1148 3067,1193"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 2160,1170 -->
+<polygon points=" 2266,1148 2176,1170 2266,1193 2266,1148"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp2">
+	<path clip-rule="evenodd" d="M 878,-112 H 3442 V 2452 H 878 z
+		M 1741,719 1709,751 1800,820 1810,810z
+		M 1499,541 1531,509 1440,440 1430,450z"/>
+</clipPath>
+</defs>
+<polyline points=" 1440,450 1800,810" clip-path="url(#cp2)"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Forward arrow to point 1800,810 -->
+<polygon points=" 1709,751 1789,799 1741,719 1709,751"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 1440,450 -->
+<polygon points=" 1531,509 1451,461 1499,541 1531,509"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp3">
+	<path clip-rule="evenodd" d="M 878,-112 H 3442 V 2452 H 878 z
+		M 2101,1079 2069,1111 2160,1180 2170,1170z
+		M 1859,901 1891,869 1800,800 1790,810z"/>
+</clipPath>
+</defs>
+<polyline points=" 1800,810 2160,1170" clip-path="url(#cp3)"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Forward arrow to point 2160,1170 -->
+<polygon points=" 2069,1111 2149,1159 2101,1079 2069,1111"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 1800,810 -->
+<polygon points=" 1891,869 1811,821 1859,901 1891,869"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Text -->
+<text xml:space="preserve" x="2655" y="1125" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">r</text>
+<!-- Text -->
+<text xml:space="preserve" x="2700" y="1935" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">w</text>
+<!-- Text -->
+<text xml:space="preserve" x="1845" y="1080" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">w</text>
+<!-- Text -->
+<text xml:space="preserve" x="1440" y="720" fill="#000000" font-family="Times" font-style="normal" font-weight="normal" font-size="144" text-anchor="start">w</text>
+</g>
+</svg>
