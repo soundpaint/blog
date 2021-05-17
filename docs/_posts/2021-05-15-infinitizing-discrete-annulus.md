@@ -65,7 +65,7 @@ in the same plane and sharing the same center point.
 
 <div style="text-align:center; float:right">
   <figure class="image">
-    <img src="{{site.baseurl}}/assets/images/contiguous-annulus.svg"
+    <img src="{{site.baseurl}}/assets/images/2021-05-15/contiguous-annulus.svg"
          alt="Fig. 1: Annulus Radius and Width">
     <figcaption>Fig. 1: Annulus with<br />Width w and Radius r=3w</figcaption>
   </figure>
@@ -105,7 +105,7 @@ for this specific example,
 
 <div style="text-align:center; float:right">
   <figure class="image">
-    <img src="{{site.baseurl}}/assets/images/discrete-annulus.svg"
+    <img src="{{site.baseurl}}/assets/images/2021-05-15/discrete-annulus.svg"
          alt="Fig. 2: Discrete Annulus Radius and Width">
     <figcaption>Fig. 2: Rasterized Annulus with<br />Width w and Radius r=3w</figcaption>
   </figure>
@@ -179,7 +179,7 @@ adapted for annuli.
 
 <div style="text-align:center; float:right">
   <figure class="image">
-    <img src="{{site.baseurl}}/assets/images/octant.svg"
+    <img src="{{site.baseurl}}/assets/images/2021-05-15/octant.svg"
          alt="Fig. 3: Raster Width of South East Octant">
     <figcaption>Fig. 3: Raster Width of<br />South East Octant</figcaption>
   </figure>
@@ -252,7 +252,7 @@ public class AnnulusRatioLinear
 
 <div style="text-align:center">
   <figure class="image">
-    <img src="{{site.baseurl}}/assets/images/ratio-linear.svg"
+    <img src="{{site.baseurl}}/assets/images/2021-05-15/ratio-linear.svg"
          alt="Fig. 4: Ratio Convergence for Small-Scale Linear Radiuses">
     <figcaption>Fig. 4: Ratio Convergence for<br />Small-Scale Linear Radiuses</figcaption>
   </figure>
@@ -291,7 +291,7 @@ public class AnnulusRatioLogarithmic
 
 <div style="text-align:center">
   <figure class="image">
-    <img src="{{site.baseurl}}/assets/images/ratio-logarithmic.svg"
+    <img src="{{site.baseurl}}/assets/images/2021-05-15/ratio-logarithmic.svg"
          alt="Fig. 5: Ratio Convergence for Large-Scale Logarithmic Radiuses">
     <figcaption>Fig. 5: Ratio Convergence for<br />Large-Scale Logarithmic Radiuses</figcaption>
   </figure>
@@ -336,7 +336,7 @@ resolves to the expression
 
 <div style="text-align:center; float:right">
   <figure class="image">
-    <img src="{{site.baseurl}}/assets/images/var-discrete-annulus.svg"
+    <img src="{{site.baseurl}}/assets/images/2021-05-15/var-discrete-annulus.svg"
          alt="Fig. 6: Discrete Annulus Radius and Width">
     <figcaption>Fig. 6: Alternately Rasterized Annulus<br />with Width w and Radius r=2w</figcaption>
   </figure>
@@ -427,7 +427,7 @@ surprisingly also half of the above value.
 
 <div style="text-align:center; float:right">
   <figure class="image">
-    <img src="{{site.baseurl}}/assets/images/tile-sections.svg"
+    <img src="{{site.baseurl}}/assets/images/2021-05-15/tile-sections.svg"
          alt="Fig. 7: Adding Additional Tiles">
     <figcaption>Fig. 7: Adding Additional<br />Tiles</figcaption>
   </figure>
@@ -446,7 +446,7 @@ is the effect on our correction factor?
 
 <div style="text-align:center; float:right">
   <figure class="image">
-    <img src="{{site.baseurl}}/assets/images/octant-dimensions.svg"
+    <img src="{{site.baseurl}}/assets/images/2021-05-15/octant-dimensions.svg"
          alt="Fig. 8: Octant Width and Height">
     <figcaption>Fig. 8: Octant Width and Height</figcaption>
   </figure>
@@ -454,13 +454,13 @@ is the effect on our correction factor?
 
 Remember that we are looking at an octant with slope not more than
 \\(1.0\\).  The width of the octant is \\(\sqrt\frac{1}{2}r\\), and
-its height is \\(1 - \sqrt\frac{1}{2}r\\).  Again following the
+its height is \\((1 - \sqrt\frac{1}{2})r\\).  Again following the
 contour of the octant counterclockwise, we draw a a sequence of
 sections of horizontally connected tiles, and every next section
 starts one row above.  Therefore, additionally to the
 \\(\lfloor\sqrt\frac{1}{2}r\rfloor\\) tiles, one for each column that
-we pass, we additionally have to insert \\(\lfloor1 -
-\sqrt\frac{1}{2}r\rfloor\\) tiles, one tile for each change of row.
+we pass, we additionally have to insert \\(\lfloor(1 -
+\sqrt\frac{1}{2})r\rfloor\\) tiles, one tile for each change of row.
 In summary, this makes \\(\lfloor{}r\rfloor\\) tiles for
 \\(r\to\infty\\).
 
@@ -488,6 +488,33 @@ variation of \\(w\\), we get a correction factor of
 
 \\(C_\infty{} = \frac{2}{\pi} \approx 0.636619772\\).
 
+## Summary
+
+When approximating an annulus of width \\(w\\) on a raster (like a
+bitmap) with tiles, the area of the original annulus and the
+approximation differ by a factor (that we denote as _correction
+factor_) that converges for large radiuses to some value other than
+\\(1.0\\).  The exact value depends on whether the raster tiles have
+either width and height \\(w\\) or diameter \\(w\\), but also on the
+exact method of tiling (either minimal number of tiles without
+producing any gaps, or minimal number of tiles that always face a
+complete edge to its neighbour, rather that just touching it just with
+one of its corners).  For the different modus operandi, we get the
+following correction factors:
+
+| Square Tiles with | Width and Height \\(w\\) | Diameter \\(w\\) |
+|---|---|---|
+| Touching Corners Sufficient | \\(C_\infty{} = \frac{2\sqrt{2}}{\pi} \approx 0.900316316\\) | \\(C_\infty{} = \frac{\sqrt{2}}{\pi} \approx 0.450158158\\) |
+|---|---|---|
+| Touching Edges Required     | \\(C_\infty{} = \frac{4}{\pi} \approx 1.273239545\\) | \\(C_\infty{} = \frac{2}{\pi} \approx 0.636619772\\) |
+|---|---|---|
+
+## Future Work
+
+Of course, further variations are imaginable, for example tiles that
+are not square-shaped, or variations of the algorithm that selects the
+tiles on the raster for approximating the contiguous annulus.
+
 ## Conclusion
 
 We don't solve the problem of dark matter, nor do we directly
@@ -507,13 +534,14 @@ in this article shows!
 This is somewhat ridiculous: Drawing a sketch of what I am writing in
 this post (including authoring the Java code and compile all equations
 and derivations) took me, maybe, half an hour of work time or alike.
-In contrast, expanding my sparse notes to this full-blown blog post,
-including drawing all figures, took me more than a full day of work,
-and I still see text passages that would deserve more elaboration and
-explanation and that show up major flaws with respect to consistency
-in notation especially for unexperienced readers.  Maybe I need a
-secretary with sufficient mathematical background for blowing up my
-sparse notes to full-blown blog posts and for proof-reading?  🤷
+In contrast, expanding my sparse notes and elaborating them into this
+full-blown blog post, including drawing all figures, took me almost a
+whole weekend of work, and I still see text passages that would
+deserve more elaboration and explanation and that show up major flaws
+with respect to consistency in notation especially for unexperienced
+readers.  Maybe I need a secretary with sufficient mathematical
+background for blowing up my sparse notes to full-blown blog posts and
+for proof-reading?  🤷
 
 Note that this article contains maths that you _should_ be familiar
 with if you have visited an ordinary middle school, or in Germany
