@@ -112,7 +112,7 @@ for this specific example,
 </div>
 
 Now imagine we want to draw the same annulus on a rasterized
-background, just like drawing a circle on a bitmap image.  That is, we
+background, just like drawing on a bitmap image.  That is, we
 construct an approximation of the previously contiguous annulus by
 putting square tiles on the raster.  We assume that the square tiles
 have exactly the same width (and also height, since we assume that
@@ -171,11 +171,11 @@ value of \\(C_n\\) at least converge to a stable correction factor for
 \\(n\to\infty\\)?
 
 Yes, we can generalize our result!  All we have to know is how many
-tiles we need to rasterize a circle with \\(r=nw\\) for any
+tiles we need to rasterize an annulus with \\(r=nw\\) for any
 \\(n\in{}ℕ\\).  For counting tiles, we first have to specify how a
-circle is rasterized at all.  We choose to apply [Bresenham's
+annulus is rasterized at all.  We choose to apply [Bresenham's
 algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
-adapted for circles.
+adapted for annuli.
 
 <div style="text-align:center; float:right">
   <figure class="image">
@@ -185,11 +185,11 @@ adapted for circles.
   </figure>
 </div>
 
-We devide the circle into \\(8\\) octants of equal (as close as
+We devide the annulus into \\(8\\) octants of equal (as close as
 rasterization permits) length and have a look at the octant that
-starts at the bottom point of the circle, following its contour
+starts at the bottom point of the annulus, following its contour
 counterclockwise to the right until we have covered \\(1/8\\) of the
-circle.  Note that everywhere in this octant, the
+annulus.  Note that everywhere in this octant, the
 [slope](https://en.wikipedia.org/wiki/Slope) is not larger than
 \\(1.0\\).  That is, when we move along the octant from left to right,
 raster column by raster column, height may change at most by one
@@ -200,8 +200,8 @@ octant in order to draw a contour without gaps, but also without
 drawing the same tile multiple times.  So, the number of tiles in the
 octant that we draw equals the horizontal extent of the octant, that
 is the number of raster columns that the octant covers.  The width of
-an octant of a circle with radius \\(r\\) is
-\\(\frac{1}{2}\sqrt{2}r\\).  Accordingly, for a circle's radius of
+an octant of an annulus with radius \\(r\\) is
+\\(\frac{1}{2}\sqrt{2}r\\).  Accordingly, for an annulus' radius of
 \\(n\\) raster columns, the octant horizontally covers
 
 \\(\lfloor{}n\sin(\pi/4)\rfloor = \lfloor{}n\cos(\pi/4)\rfloor =
@@ -211,15 +211,15 @@ raster columns.  Actually, when rounding to the floor value, we risk a
 single tile gap between two adjacent octants, while, when rounding to
 the ceiling value, we risk to draw the same tile twice, once for each
 of the two adjacent octants.  Therefore, in sum for all of the \\(8\\)
-octants, our calculation of tiles for the rasterized circle may be off
-by at most 8 tiles.  However, when looking at the asymptotic behavior
-for \\(n\to\infty\\), it does not make any difference, if we use the
-floor or ceiling function for rounding.
+octants, our calculation of tiles for the rasterized annulus may be
+off by at most 8 tiles.  However, when looking at the asymptotic
+behavior for \\(n\to\infty\\), it does not make any difference, if we
+use the floor or ceiling function for rounding.
 
 So, we have calculated the number of tiles for a single octant.  Since
-we have to consider all of the \\(8\\) octants to get a full circle,
+we have to consider all of the \\(8\\) octants to get a full annulus,
 we have to overall draw \\(8\lfloor{}n\frac{1}{2}\sqrt{2}\rfloor\\)
-tiles for a circle with radius \\(r=nw\\).
+tiles for an annulus with radius \\(r=nw\\).
 
 ## General Ratio \\(C_n = A_d(nw, w) / A_c(nw, w)\\)
 
@@ -349,7 +349,7 @@ possible match at the topmost, bottommost, leftmost and rightmost
 place of the annulus.
 
 Alternative, one may seek for a bestmost match on the diagonal
-positions on the circle.  This approach leads to tiles with diagonal
+positions on the annulus.  This approach leads to tiles with diagonal
 diameter of \\(w\\).  How does this change affect or modify our
 previous results?
 
@@ -422,6 +422,71 @@ C_\infty{} & = & \lim_{n\to\infty}A_d(r, w) / A_c(r, w)\newline
 
 which is, now that the tiles have half of their original size, not
 surprisingly also half of the above value.
+
+## Smooth Contour
+
+<div style="text-align:center; float:right">
+  <figure class="image">
+    <img src="{{site.baseurl}}/assets/images/tile-sections.svg"
+         alt="Fig. 7: Adding Additional Tiles">
+    <figcaption>Fig. 7: Adding Additional<br />Tiles</figcaption>
+  </figure>
+</div>
+
+Following Bresenham's algorithm, our rastered annulus so far was drawn
+with the minimal number of tiles needed such that there are no gaps
+between the tiles.  However, this method has the effect that
+horizontally adjacent tiles on different rows will touch only in a
+single corner point, creating hard edges in the contour, rather than
+touching the next tile with always a full adjacent edge.  To achieve
+the latter, one needs to add additional tiles that, in effect, make
+the stroke of the annulus somewhat thicker and result in a larger
+area.  How many additional tiles will this approach produce, and what
+is the effect on our correction factor?
+
+<div style="text-align:center; float:right">
+  <figure class="image">
+    <img src="{{site.baseurl}}/assets/images/octant-dimensions.svg"
+         alt="Fig. 8: Octant Width and Height">
+    <figcaption>Fig. 8: Octant Width and Height</figcaption>
+  </figure>
+</div>
+
+Remember that we are looking at an octant with slope not more than
+\\(1.0\\).  The width of the octant is \\(\sqrt\frac{1}{2}r\\), and
+its height is \\(1 - \sqrt\frac{1}{2}r\\).  Again following the
+contour of the octant counterclockwise, we draw a a sequence of
+sections of horizontally connected tiles, and every next section
+starts one row above.  Therefore, additionally to the
+\\(\lfloor\sqrt\frac{1}{2}r\rfloor\\) tiles, one for each column that
+we pass, we additionally have to insert \\(\lfloor1 -
+\sqrt\frac{1}{2}r\rfloor\\) tiles, one tile for each change of row.
+In summary, this makes \\(\lfloor{}r\rfloor\\) tiles for
+\\(r\to\infty\\).
+
+This affects the ratio as follows:
+
+\\(
+\begin{array}{rcl}
+C_\infty{} & = & \lim_{n\to\infty}A_d(r, w) / A_c(r, w)\newline
+& = & \lim_{n\to\infty}A_d(nw, w) / A_c(nw, w)\newline
+& = & \lim_{n\to\infty}A_d(n, 1) / A_c(n, 1)\newline
+& = & \lim_{n\to\infty}\frac{8\lfloor{}n\rfloor}{2\pi{}n}\newline
+& = & \lim_{n\to\infty}\frac{8n}{2\pi{}n}\newline
+& = & \lim_{n\to\infty}\frac{4}{\pi}\newline
+& = & \frac{4}{\pi}\newline
+& \approx & 1.273239545,
+\end{array}
+\\)
+
+## Smooth Contour and Variation of \\(w\\)
+
+For smooth contour, we get \\(C_\infty{} = \frac{4}{\pi}\\).  The
+variation of \\(w\\) as discussed above, in effect halves the
+correction factor.  That is, when applying both, smooth contour and
+variation of \\(w\\), we get a correction factor of
+
+\\(C_\infty{} = \frac{2}{\pi} \approx 0.636619772\\).
 
 ## Conclusion
 
