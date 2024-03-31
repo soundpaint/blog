@@ -1,5 +1,17 @@
+# install files
+docs/vendor
+docs/Gemfile
+
+# build files
 _site
+*.class
+
+# cache files
 .sass-cache
+
+# misc files
 Gemfile.lock
+
+# backup files
 *~
 *.fig.bak
